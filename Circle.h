@@ -1,32 +1,14 @@
-#include "Circle.h"
-#include <iostream>
-#include <string>
-#define pi 3.41
-using namespace std;
-
-
-Circle::Circle(int r = 0) : radius(r)
+#pragma once
+#include "Shape.h"
+class Circle : public Shape
 {
-	noOfShapes++;
-	noOfSides = 1;
-	nameOfShape = "Circle";
-}
+public:
+	Circle(int);
+	~Circle();
+	double perimeter();
+	double area();
+	void draw();
 
-
-Circle::~Circle()
-{
-	noOfShapes--;
-}
-
-double Circle::perimeter()
-{
-	return (2 * pi*radius);
-}
-double Circle::area()
-{
-	return (pi*radius*radius);
-}
-void Circle::draw()
-{
-cout << "This is drawing a circle of Radius: " << radius << endl;
-}
+private:
+	const int radius;
+};
